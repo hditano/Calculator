@@ -14,18 +14,18 @@ class Information:
         self._password = password
 
     def displayInformation(self):
-        my_display = FileHelper.Filehelper(self._user)
+        my_display = FileHelper.Filehelper(self._user, self._password)
         print(f"Total Records: {my_display.totalRecords()}")
         print("[A]dd new Data | [R]emove Data | [D]isplay Records | [C]hange User | [Q]uit")
         value = input().lower()
         self.my_dict[value]()
 
     def add(self):
-        my_add = FileHelper.Filehelper(self._user)
+        my_add = FileHelper.Filehelper(self._user, self._password)
         my_add.add()
 
     def remove(self):
-        my_remove = FileHelper.Filehelper(self._user)
+        my_remove = FileHelper.Filehelper(self._user, self._password)
         my_remove.remove()
 
     def changeUser(self):
@@ -35,8 +35,8 @@ class Information:
         my_user.chequeardatos()
 
     def displayRecords(self):
-        my_display = FileHelper.Filehelper(self._user)
-        my_display.totalRecords()
+        my_display = FileHelper.Filehelper(self._user, self._password)
+        my_display.displayRecords()
 
     def default(self):
         return "Incorrect Input"
