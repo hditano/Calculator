@@ -1,4 +1,5 @@
-from Registration import FileHelper, Users
+from Registration.Registration import Users
+from Registration import FileHelper
 
 
 class Information:
